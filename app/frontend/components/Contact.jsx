@@ -39,3 +39,181 @@ export default function Contact() {
       {...props}
     />
   );
+
+  return (
+    <section
+      id="contact"
+      data-testid="contact-section"
+      className="relative py-24 sm:py-32 bg-obsidian overflow-hidden"
+    >
+      <div className="absolute inset-0 grid-bg opacity-25 pointer-events-none" />
+      <div className="absolute -bottom-32 right-0 w-[500px] h-[500px] rounded-full bg-neon-emerald/5 blur-[140px]" />
+
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7 }}
+          className="mb-14 text-center"
+        >
+          <div className="text-xs font-mono-tech tracking-[0.3em] text-neon-cyan/80 uppercase mb-3">
+             06 · Let&apos;s build
+          </div>
+          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white">
+            Get in{" "}
+            <span className="bg-gradient-to-r from-[#00F0FF] to-[#00FF66] bg-clip-text text-transparent">
+              touch
+            </span>
+          </h2>
+          <p className="mt-3 text-[#94A3B8] max-w-xl mx-auto">
+            Open to internships, full-time SWE roles & freelance builds. Drop a line —
+            I reply fast.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-5 gap-8">
+          {/* contact info */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-2 space-y-4"
+          >
+            <div className="glass-card rounded-2xl p-6 space-y-4">
+              <a
+                href={`tel:${PROFILE.phone.replace(/s/g, "")}`}
+                data-testid="contact-phone-link"
+                className="flex items-center gap-3 text-sm text-white/85 hover:text-neon-cyan transition-colors"
+              >
+                <span className="w-9 h-9 rounded-lg grid place-items-center bg-neon-cyan/10 border border-neon-cyan/30">
+                  <Phone className="w-4 h-4 text-neon-cyan" />
+                </span>
+                <span className="font-mono-tech">{PROFILE.phone}</span>
+              </a>
+              <div className="flex items-center gap-3 text-sm text-white/85">
+                <span className="w-9 h-9 rounded-lg grid place-items-center bg-neon-emerald/10 border border-neon-emerald/30">
+                  <MapPin className="w-4 h-4 text-neon-emerald" />
+                </span>
+                <span className="font-mono-tech">{PROFILE.location}</span>
+              </div>
+              <div className="pt-4 border-t border-white/5 flex items-center gap-2">
+                <a
+                  data-testid="contact-github-link"
+                  href={PROFILE.socials.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 rounded-full grid place-items-center border border-white/10 text-white/70 hover:text-neon-cyan hover:border-neon-cyan/40 transition-all hover:scale-110"
+                  aria-label="github"
+                >
+<GitBranch className="w-4 h-4" />
+                </a>
+                <a
+                  data-testid="contact-linkedin-link"
+                  href={PROFILE.socials.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 rounded-full grid place-items-center border border-white/10 text-white/70 hover:text-neon-cyan hover:border-neon-cyan/40 transition-all hover:scale-110"
+                  aria-label="LinkedIn"
+                >
+                  <span className="text-xs font-bold">in</span>
+                </a>
+                <a
+                  data-testid="contact-leetcode-link"
+                  href={PROFILE.socials.leetcode}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 rounded-full grid place-items-center border border-white/10 text-white/70 hover:text-neon-emerald hover:border-neon-emerald/50 transition-all hover:scale-110"
+                  aria-label="LeetCode"
+                >
+                  <Code2 className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            <div className="glass-card rounded-2xl p-6">
+              <div className="text-[11px] font-mono-tech tracking-widest uppercase text-neon-cyan/80 mb-2">
+                $ availability --status
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <span className="w-2 h-2 rounded-full bg-neon-emerald animate-pulse-glow" />
+                <span className="text-white/85">
+                  Open to full-time & internship offers
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* form */}
+          <motion.form
+            data-testid="contact-form"
+            onSubmit={submit}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-3 glass-card rounded-2xl p-6 sm:p-8"
+          >
+            <div className="grid sm:grid-cols-2 gap-5">
+              {field("name", { placeholder: "Your name", required: true, maxLength: 120 })}
+              {field("email", { placeholder: "Email address", type: "email", required: true })}
+            </div>
+            <div className="mt-5">
+              {field("subject", { placeholder: "Subject (optional)", maxLength: 200 })}
+            </div>
+            <div className="mt-5">
+              <textarea
+                data-testid="contact-input-message"
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                placeholder="Tell me about your project, role, or opportunity…"
+                required
+                rows={5}
+                maxLength={4000}
+                className="w-full bg-transparent border-0 border-b border-white/10 focus:border-neon-cyan focus:outline-none py-3 px-1 text-sm font-mono-tech placeholder:text-white/30 text-white transition-colors resize-none"
+              />
+            </div>
+
+            <div className="mt-6 flex flex-wrap items-center gap-4 justify-between">
+              <div className="text-[11px] font-mono-tech text-white/40">
+                Stored securely. No spam, ever.
+              </div>
+              <button
+                data-testid="contact-submit-btn"
+                disabled={status === "sending"}
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-mono-tech text-xs tracking-widest uppercase text-[#0B0F19] bg-gradient-to-r from-[#00F0FF] to-[#00FF66] hover:scale-[1.04] transition-transform disabled:opacity-60 disabled:scale-100 shadow-[0_0_24px_rgba(0,240,255,0.35)]"
+              >
+                <Send className="w-4 h-4" />
+                {status === "sending" ? "Sending…" : "Send Message"}
+              </button>
+            </div>
+
+            {status === "ok" && (
+              <motion.div
+                data-testid="contact-success"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-5 flex items-center gap-2 text-sm text-neon-emerald"
+              >
+                <CheckCircle2 className="w-4 h-4" />
+                Message sent — I&apos;ll get back within 24h.
+              </motion.div>
+            )}
+            {status === "err" && (
+              <motion.div
+                data-testid="contact-error"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-5 flex items-center gap-2 text-sm text-red-400"
+              >
+                <AlertCircle className="w-4 h-4" />
+                {errorMsg}
+              </motion.div>
+            )}
+          </motion.form>
+        </div>
+      </div>
+    </section>
+  );
+}
