@@ -73,7 +73,7 @@ function ParticleField() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0, 240, 255, 0.65)";
+        ctx.fillStyle = "rgba(37, 99, 235, 0.22)";
         ctx.fill();
       });
 
@@ -84,7 +84,7 @@ function ParticleField() {
           const b = particles[j];
           const d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < 110) {
-            ctx.strokeStyle = `rgba(0, 240, 255, ${(1 - d / 110) * 0.18})`;
+            ctx.strokeStyle = `rgba(14, 165, 233, ${(1 - d / 110) * 0.12})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -143,9 +143,9 @@ function Typewriter({ words, speed = 90, pause = 1300 }) {
   }, [sub, del, idx, words, speed, pause]);
 
   return (
-    <span data-testid="hero-typewriter" className="text-neon-cyan neon-text-glow">
+    <span data-testid="hero-typewriter" className="text-[var(--color-accent)]">
       {sub}
-      <span className="cursor-blink text-neon-emerald">|</span>
+      <span className="cursor-blink text-[var(--color-accent-2)]">|</span>
     </span>
   );
 }
@@ -158,24 +158,20 @@ export default function Hero() {
     <section
       id="hero"
       data-testid="hero-section"
-      className="relative min-h-screen flex items-center overflow-hidden bg-obsidian"
+      className="relative min-h-screen flex items-center overflow-hidden section-shell"
     >
-      <div className="absolute inset-0 grid-bg opacity-60" />
+      <div className="absolute inset-0 grid-bg opacity-35" />
       <div className="absolute inset-0 radial-spotlight" />
       <ParticleField />
-
-      {/* glow orbs */}
-      <div className="absolute -top-40 -left-40 w-[480px] h-[480px] rounded-full bg-neon-cyan/10 blur-[120px]" />
-      <div className="absolute -bottom-40 -right-40 w-[480px] h-[480px] rounded-full bg-neon-emerald/10 blur-[140px]" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8 py-32 w-full">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex items-center gap-2 text-xs font-mono-tech tracking-[0.3em] uppercase text-neon-emerald/90 mb-6"
+          className="flex items-center gap-2 section-eyebrow mb-6"
         >
-          <span className="w-8 h-px bg-neon-emerald" />
+          <span className="w-8 h-px bg-[var(--color-accent)]" />
           <MapPin className="w-3 h-3" />
           {PROFILE.location} · Available for work
         </motion.div>
@@ -184,11 +180,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display font-black tracking-tight text-4xl sm:text-6xl lg:text-7xl leading-[1.02] text-white"
+          className="font-display font-black tracking-tight text-4xl sm:text-6xl lg:text-7xl leading-[1.02] text-[var(--color-text)]"
         >
-          <span className="block neon-text-glow">Riddhi</span>
+          <span className="block">Riddhi</span>
           <span className="block">
-            <span className="bg-gradient-to-r from-[#00F0FF] to-[#00FF66] bg-clip-text text-transparent">
+            <span className="text-[var(--color-accent)]">
               Pachehara
             </span>
           </span>
@@ -198,9 +194,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-6 font-mono-tech text-base sm:text-xl text-white/80 h-7"
+          className="mt-6 font-mono-tech text-base sm:text-xl text-[var(--color-text-secondary)] h-7"
         >
-          <span className="text-white/50">{`> I am a `}</span>
+          <span className="text-[var(--color-text-secondary)]">{`> I am a `}</span>
           <Typewriter words={PROFILE.titles} />
         </motion.div>
 
@@ -208,7 +204,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-[#94A3B8]"
+          className="mt-8 max-w-2xl text-base sm:text-lg body-copy"
         >
           {PROFILE.tagline}
         </motion.p>
@@ -222,7 +218,7 @@ export default function Hero() {
           <button
             data-testid="hero-explore-btn"
             onClick={() => scrollTo("projects")}
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full font-mono-tech text-xs sm:text-sm tracking-widest uppercase text-[#0B0F19] bg-gradient-to-r from-[#00F0FF] to-[#00FF66] hover:scale-[1.04] transition-all shadow-[0_0_32px_rgba(0,240,255,0.4)] hover:shadow-[0_0_44px_rgba(0,255,102,0.5)]"
+            className="btn-primary group px-6 py-3 font-mono-tech text-xs sm:text-sm tracking-widest uppercase"
           >
             Explore My Work
             <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
@@ -232,7 +228,7 @@ export default function Hero() {
             href={PROFILE.resumePath}
             download
             data-testid="hero-resume-btn"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-mono-tech text-xs sm:text-sm tracking-widest uppercase text-white/90 border border-white/15 hover:border-neon-cyan/50 hover:text-neon-cyan transition-all"
+            className="btn-secondary px-5 py-3 font-mono-tech text-xs sm:text-sm tracking-widest uppercase"
           >
             <Download className="w-4 h-4" />
             Resume
@@ -244,7 +240,7 @@ export default function Hero() {
               href={PROFILE.socials.github}
               target="_blank"
               rel="noreferrer"
-              className="w-11 h-11 rounded-full grid place-items-center border border-white/10 text-white/70 hover:text-neon-cyan hover:border-neon-cyan/40 transition-all hover:scale-110"
+              className="w-11 h-11 rounded-[12px] grid place-items-center border border-[var(--color-border)] bg-white text-[var(--color-text-secondary)] hover:text-[var(--color-accent-hover)] hover:border-[var(--color-accent)] transition-all duration-200 hover:-translate-y-0.5"
               aria-label="github"
             >
 <Github className="w-4 h-4" />
@@ -254,7 +250,7 @@ export default function Hero() {
               href={PROFILE.socials.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="w-11 h-11 rounded-full grid place-items-center border border-white/10 text-white/70 hover:text-neon-cyan hover:border-neon-cyan/40 transition-all hover:scale-110"
+              className="w-11 h-11 rounded-[12px] grid place-items-center border border-[var(--color-border)] bg-white text-[var(--color-text-secondary)] hover:text-[var(--color-accent-hover)] hover:border-[var(--color-accent)] transition-all duration-200 hover:-translate-y-0.5"
               aria-label="linkedin"
             >
 <Linkedin className="w-4 h-4" />
@@ -264,7 +260,7 @@ export default function Hero() {
               href={PROFILE.socials.leetcode}
               target="_blank"
               rel="noreferrer"
-              className="w-11 h-11 rounded-full grid place-items-center border border-white/10 text-white/70 hover:text-neon-emerald hover:border-neon-emerald/50 transition-all hover:scale-110"
+              className="w-11 h-11 rounded-[12px] grid place-items-center border border-[var(--color-border)] bg-white text-[var(--color-text-secondary)] hover:text-[var(--color-accent-hover)] hover:border-[var(--color-accent)] transition-all duration-200 hover:-translate-y-0.5"
               aria-label="LeetCode"
             >
               <Code2 className="w-4 h-4" />
@@ -278,7 +274,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 6, 0] }}
         transition={{ delay: 1, duration: 1.6, repeat: Infinity }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 hover:text-neon-cyan"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent-hover)] transition-colors"
         data-testid="hero-scroll-indicator"
         aria-label="Scroll down"
       >

@@ -24,7 +24,7 @@ function Home() {
   }, [loaded]);
 
   return (
-    <div className="bg-obsidian min-h-screen text-white">
+    <div className="bg-[var(--color-bg)] min-h-screen text-[var(--color-text)]">
       {!loaded && <Preloader onDone={() => setLoaded(true)} />}
       <Navbar />
       <main>

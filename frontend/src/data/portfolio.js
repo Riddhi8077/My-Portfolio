@@ -5,7 +5,7 @@ export const PROFILE = {
   tagline:
     "Computer Science undergraduate with hands-on experience building scalable full-stack applications using React.js, Node.js, REST APIs, SQL, and cloud platforms.",
   phone: "+91 80771 89209",
-  location: "Mathura, India",
+  location: "India",
   socials: {
     github: "https://github.com/Riddhi8077",
     linkedin: "https://www.linkedin.com/in/riddhi-pachehara/",
@@ -56,7 +56,6 @@ export const PROJECT_CATEGORIES = [
     id: "hackathons",
     title: "Hackathon Projects",
     subtitle: "Award-winning innovation builds",
-    glow: "from-[#00F0FF] to-[#00FF66]",
     projects: [
       {
         id: "medoveda",
@@ -67,7 +66,26 @@ export const PROJECT_CATEGORIES = [
         stack: ["React", "Node.js", "OCR", "AI", "Nutrition APIs"],
         mockup: "/assets/projects/medoveda.png",
         link: "https://medo-veda.netlify.app/",
-        span: "lg:col-span-2",
+      },
+      {
+        id: "SynGov",
+        title: "SynGov",
+        award: "Google Hack Days in Delhi tOP 5 Finalist",
+        description:
+          "SynGov gives your club the structure to make decisions together - fairly, transparently, and without drama. AI simplifies proposals. Your contributions shape your influence.",
+        stack: ["React", "Node.js", "OCR", "AI", "Gemini APIs"],
+        mockup: "/assets/projects/SynGov.png",
+        link: "https://syn-gov.vercel.app/",
+      },
+      {
+        id: "Preecode",
+        title: "Preecode",
+        award: "NeuroX hackathon Winner",
+        description:
+          "Preecode helps developers practice consistently, review code with AI assistance, and improve problem-solving skills without leaving their editor. It combines coding workflows, guidance, and progress-oriented tooling in one extension.",
+          stack: ["TypeScript", "Node.js", "MongoDB", "Express.js", "OpenAI API", "Model Context Protocol (MCP)"],
+        mockup: "/assets/projects/Preecode.png",
+        link: "https://preecode.vercel.app/",
       },
     ],
   },
@@ -76,7 +94,6 @@ export const PROJECT_CATEGORIES = [
     id: "freelancing",
     title: "Freelancing Projects",
     subtitle: "Production-ready client solutions",
-    glow: "from-[#00F0FF] to-[#3B82F6]",
     projects: [
       {
         id: "upshotx",
@@ -87,7 +104,6 @@ export const PROJECT_CATEGORIES = [
         stack: ["React", "Tailwind", "Responsive UI", "Deployment"],
         mockup: "/assets/projects/upshotx.png",
         link: "https://upshotx.com/",
-        span: "lg:col-span-2",
       },
     ],
   },
@@ -96,7 +112,6 @@ export const PROJECT_CATEGORIES = [
     id: "internships",
     title: "Internship Projects",
     subtitle: "Industry-level internship work",
-    glow: "from-[#00FF66] to-[#00F0FF]",
     projects: [
       {
         id: "amazon-microsite",
@@ -107,7 +122,6 @@ export const PROJECT_CATEGORIES = [
         stack: ["React", "Tailwind", "Frontend"],
         mockup: "/assets/projects/amazon.png",
         link: "https://marketcreators.in/bulkgiftcards",
-        span: "lg:col-span-1",
       },
 
       {
@@ -119,7 +133,6 @@ export const PROJECT_CATEGORIES = [
         stack: ["React", "JavaScript", "Responsive Design"],
         mockup: "/assets/projects/ticketbooking.png",
         link: "https://riddhiinternshipproject.netlify.app/",
-        span: "lg:col-span-1",
       },
 
       {
@@ -131,7 +144,6 @@ export const PROJECT_CATEGORIES = [
         stack: ["React", "Business Logic", "Billing System"],
         mockup: "/assets/projects/lensshine.png",
         link: "https://lensshinesoftware.netlify.app/",
-        span: "lg:col-span-1",
       },
     ],
   },

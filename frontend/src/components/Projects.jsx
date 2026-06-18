@@ -47,12 +47,12 @@ function ProjectCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay: index * 0.08 }}
-      className={`${project.span || ""}`}
+      className="h-full"
       data-testid={`project-card-${project.id}`}
     >
       <TiltCard className="h-full">
-        <div className="glass-card glass-card-hover rounded-2xl overflow-hidden h-full flex flex-col">
-          <div className="relative aspect-[16/10] overflow-hidden bg-[#0B0F19]">
+        <div className="glass-card glass-card-hover rounded-[12px] overflow-hidden h-full flex flex-col">
+          <div className="relative aspect-[16/10] overflow-hidden bg-[#F8FAFC] border-b border-[var(--color-border)]">
             {tab === "mockup" ? (
               <motion.div
                 key="m"
@@ -64,9 +64,8 @@ function ProjectCard({ project, index }) {
                 <img
   src={project.mockup}
   alt={project.title}
-  className="w-full h-full object-contain p-6 opacity-95 transition-transform duration-500 group-hover:scale-105"
+  className="w-full h-full object-contain p-5 opacity-95 transition-transform duration-500 group-hover:scale-105"
 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent" />
               </motion.div>
             ) : (
               <motion.div
@@ -77,16 +76,16 @@ function ProjectCard({ project, index }) {
                 transition={{ duration: 0.4 }}
                 className="absolute inset-0 grid-bg flex items-center justify-center"
               >
-                <div className="relative w-[88%] h-[78%] rounded-lg border border-neon-cyan/30 overflow-hidden bg-[#0B0F19]/80">
+                <div className="relative w-[88%] h-[78%] rounded-[12px] border border-[var(--color-border)] overflow-hidden bg-white">
                   <div className="absolute inset-0 shimmer" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center px-4">
-                    <div className="w-14 h-14 rounded-full grid place-items-center bg-neon-cyan/15 border border-neon-cyan/50 animate-pulse-glow">
-                      <Play className="w-5 h-5 text-neon-cyan" />
+                    <div className="w-14 h-14 rounded-[12px] grid place-items-center icon-box">
+                      <Play className="w-5 h-5" />
                     </div>
-                    <div className="font-mono-tech text-[11px] tracking-widest uppercase text-neon-emerald/90">
+                    <div className="font-mono-tech text-[11px] tracking-widest uppercase text-[var(--color-accent)]">
                       Screen Recording Walkthrough
                     </div>
-                    <div className="text-xs text-white/50">
+                    <div className="text-xs text-[var(--color-text-secondary)]">
                       Video container · Replace with your MP4
                     </div>
                   </div>
@@ -96,14 +95,14 @@ function ProjectCard({ project, index }) {
 
             {/* tab toggle */}
             <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-              <div className="flex bg-[#0B0F19]/80 backdrop-blur-md rounded-full p-1 border border-white/10">
+              <div className="flex bg-white/95 rounded-[12px] p-1 border border-[var(--color-border)] shadow-sm">
                 <button
                   data-testid={`project-tab-mockup-${project.id}`}
                   onClick={() => setTab("mockup")}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-mono-tech tracking-widest uppercase transition-all ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-[8px] text-[10px] font-mono-tech tracking-widest uppercase transition-all ${
                     tab === "mockup"
-                      ? "bg-gradient-to-r from-[#00F0FF] to-[#00FF66] text-[#0B0F19]"
-                      : "text-white/60 hover:text-white"
+                      ? "bg-[var(--color-accent)] text-white"
+                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-accent-hover)]"
                   }`}
                 >
                   <ImageIcon className="w-3 h-3" /> Mockup
@@ -111,17 +110,17 @@ function ProjectCard({ project, index }) {
                 <button
                   data-testid={`project-tab-video-${project.id}`}
                   onClick={() => setTab("video")}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-mono-tech tracking-widest uppercase transition-all ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-[8px] text-[10px] font-mono-tech tracking-widest uppercase transition-all ${
                     tab === "video"
-                      ? "bg-gradient-to-r from-[#00F0FF] to-[#00FF66] text-[#0B0F19]"
-                      : "text-white/60 hover:text-white"
+                      ? "bg-[var(--color-accent)] text-white"
+                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-accent-hover)]"
                   }`}
                 >
                   <Play className="w-3 h-3" /> Walkthrough
                 </button>
               </div>
               {project.award && (
-                <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-neon-emerald/10 border border-neon-emerald/30 text-[10px] font-mono-tech tracking-widest uppercase text-neon-emerald">
+                <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-[8px] bg-white/95 border border-[var(--color-border)] text-[10px] font-mono-tech tracking-widest uppercase text-[var(--color-accent)] shadow-sm max-w-[45%] truncate">
                   <Award className="w-3 h-3" />
                   {project.award}
                 </div>
@@ -129,35 +128,35 @@ function ProjectCard({ project, index }) {
             </div>
           </div>
 
-          <div className="p-6 flex-1 flex flex-col">
-            <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2">
+          <div className="p-5 flex-1 flex flex-col">
+            <h3 className="font-display text-xl font-bold text-[var(--color-text)] mb-2">
               {project.title}
             </h3>
-            <p className="text-sm text-[#94A3B8] leading-relaxed flex-1">
+            <p className="text-sm body-copy flex-1 line-clamp-5">
               {project.description}
             </p>
             <div className="mt-5 flex flex-wrap gap-1.5">
               {project.stack.map((s) => (
                 <span
                   key={s}
-                  className="text-[10px] font-mono-tech tracking-widest uppercase px-2 py-1 rounded-md bg-neon-cyan/5 text-neon-cyan/90 border border-neon-cyan/20"
+                  className="tag text-[10px] font-mono-tech tracking-widest uppercase px-2 py-1"
                 >
                   {s}
                 </span>
               ))}
             </div>
-            <div className="mt-5 pt-5 border-t border-white/5 flex items-center justify-between">
+            <div className="mt-5 pt-5 border-t border-[var(--color-border)] flex items-center justify-between gap-3">
               <a
                 href={project.link}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs font-mono-tech tracking-widest uppercase text-white/70 hover:text-neon-cyan inline-flex items-center gap-1.5"
+                className="text-xs font-mono-tech tracking-widest uppercase text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] inline-flex items-center gap-1.5 transition-colors"
                 data-testid={`project-link-${project.id}`}
               >
                 View Live <ExternalLink className="w-3 h-3" />
               </a>
               {project.award && (
-                <span className="sm:hidden text-[10px] font-mono-tech tracking-widest uppercase text-neon-emerald">
+                <span className="sm:hidden text-[10px] font-mono-tech tracking-widest uppercase text-[var(--color-accent)] truncate">
                   {project.award}
                 </span>
               )}
@@ -180,20 +179,20 @@ function PlaceholderCard() {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay: 0.2 }}
       data-testid="project-placeholder-card"
-      className="glass-card glass-card-hover rounded-2xl border-dashed flex items-center justify-center p-10 min-h-[280px] group relative overflow-hidden lg:col-span-1"
+      className="glass-card glass-card-hover rounded-[12px] border-dashed flex items-center justify-center p-8 min-h-[280px] group relative overflow-hidden"
     >
       <div className="absolute inset-0 shimmer opacity-50" />
       <div className="relative flex flex-col items-center text-center gap-3">
-        <div className="w-14 h-14 rounded-full grid place-items-center border border-neon-emerald/40 text-neon-emerald animate-pulse-glow">
+        <div className="w-14 h-14 rounded-[12px] grid place-items-center icon-box">
           <Plus className="w-5 h-5" />
         </div>
-        <p className="font-mono-tech text-[11px] tracking-widest uppercase text-neon-emerald/90">
+        <p className="font-mono-tech text-[11px] tracking-widest uppercase text-[var(--color-accent)]">
           Additional Projects
         </p>
-        <p className="text-sm text-white/70 max-w-[18ch]">
+        <p className="text-sm text-[var(--color-text-secondary)] max-w-[18ch]">
           Loading from github…
         </p>
-        <span className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-mono-tech tracking-widest uppercase text-white/60 group-hover:text-neon-cyan">
+        <span className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-mono-tech tracking-widest uppercase text-[var(--color-text-secondary)] group-hover:text-[var(--color-accent-hover)] transition-colors">
 <GitBranch className="w-3 h-3" /> View on github
         </span>
       </div>
@@ -206,9 +205,9 @@ export default function Projects() {
     <section
       id="projects"
       data-testid="projects-section"
-      className="relative py-24 sm:py-32 bg-obsidian"
+      className="relative py-24 sm:py-32 section-shell"
     >
-      <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 grid-bg opacity-15 pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -217,17 +216,17 @@ export default function Projects() {
           transition={{ duration: 0.7 }}
           className="mb-14"
         >
-          <div className="text-xs font-mono-tech tracking-[0.3em] text-neon-cyan/80 uppercase mb-3">
+          <div className="section-eyebrow mb-3">
              02 · Selected Projects
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white">
+          <h2 className="font-display text-3xl sm:text-5xl section-title">
             Things I&apos;ve{" "}
-            <span className="bg-gradient-to-r from-[#00F0FF] to-[#00FF66] bg-clip-text text-transparent">
+            <span className="highlight-text">
               built
             </span>
           </h2>
-          <p className="mt-3 text-[#94A3B8] max-w-xl">
-            Hit <span className="text-neon-cyan">Walkthrough</span> to peek a
+          <p className="mt-3 body-copy max-w-xl">
+            Hit <span className="text-[var(--color-accent)] font-semibold">Walkthrough</span> to peek a
             screen-recorded demo inside each card.
           </p>
         </motion.div>
@@ -245,19 +244,19 @@ export default function Projects() {
       {/* Category Heading */}
       <div className="relative">
         <div
-          className={`inline-flex items-center gap-3 px-5 py-2 rounded-full bg-gradient-to-r ${category.glow} text-[#0B0F19] font-mono-tech text-xs tracking-[0.25em] uppercase shadow-[0_0_30px_rgba(0,240,255,0.25)]`}
+          className="inline-flex items-center gap-3 px-5 py-2 rounded-[12px] bg-white border border-[var(--color-border)] text-[var(--color-accent)] font-mono-tech text-xs font-bold tracking-[0.18em] uppercase shadow-sm"
         >
-          <span className="w-2 h-2 rounded-full bg-[#0B0F19]" />
+          <span className="w-2 h-2 rounded-full bg-[var(--color-accent)]" />
           {category.title}
         </div>
 
-        <p className="mt-3 text-sm text-[#94A3B8]">
+        <p className="mt-3 text-sm text-[var(--color-text-secondary)]">
           {category.subtitle}
         </p>
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className={`project-grid ${category.id === "hackathons" ? "hackathon-grid" : ""}`}>
         {category.projects.map((p, i) => (
           <ProjectCard
             key={p.id}

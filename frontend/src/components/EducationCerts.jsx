@@ -10,9 +10,9 @@ export default function EducationCerts() {
     <section
       id="education"
       data-testid="education-section"
-      className="relative py-24 sm:py-32 bg-obsidian overflow-hidden"
+      className="relative py-24 sm:py-32 section-shell overflow-hidden"
     >
-      <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 grid-bg opacity-15 pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -21,12 +21,12 @@ export default function EducationCerts() {
           transition={{ duration: 0.7 }}
           className="mb-14"
         >
-          <div className="text-xs font-mono-tech tracking-[0.3em] text-neon-cyan/80 uppercase mb-3">
+          <div className="section-eyebrow mb-3">
              05 · Foundations
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white">
+          <h2 className="font-display text-3xl sm:text-5xl section-title">
             Education &{" "}
-            <span className="bg-gradient-to-r from-[#00F0FF] to-[#00FF66] bg-clip-text text-transparent">
+            <span className="highlight-text">
               Certifications
             </span>
           </h2>
@@ -36,8 +36,8 @@ export default function EducationCerts() {
           {/* Education */}
           <div className="space-y-5">
             <div className="flex items-center gap-3 mb-1">
-              <GraduationCap className="w-5 h-5 text-neon-cyan" />
-              <h3 className="font-display text-lg font-bold text-white">
+              <GraduationCap className="w-5 h-5 text-[var(--color-accent)]" />
+              <h3 className="font-display text-lg font-bold text-[var(--color-text)]">
                 Education
               </h3>
             </div>
@@ -49,17 +49,17 @@ export default function EducationCerts() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="glass-card glass-card-hover rounded-2xl p-6"
+                className="glass-card glass-card-hover rounded-[12px] p-6"
               >
                 <div className="flex items-start justify-between gap-3 mb-2">
-                  <h4 className="font-display text-base sm:text-lg font-bold text-white leading-snug">
+                  <h4 className="font-display text-base sm:text-lg font-bold text-[var(--color-text)] leading-snug">
                     {e.degree}
                   </h4>
-                  <span className="text-[10px] font-mono-tech tracking-widest uppercase text-neon-emerald shrink-0">
+                  <span className="text-[10px] font-mono-tech tracking-widest uppercase text-[var(--color-accent)] shrink-0">
                     {e.period}
                   </span>
                 </div>
-                <p className="text-sm text-[#94A3B8]">{e.school}</p>
+                <p className="text-sm text-[var(--color-text-secondary)]">{e.school}</p>
               </motion.div>
             ))}
           </div>
@@ -67,8 +67,8 @@ export default function EducationCerts() {
           {/* Certifications */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <Award className="w-5 h-5 text-neon-emerald" />
-              <h3 className="font-display text-lg font-bold text-white">
+              <Award className="w-5 h-5 text-[var(--color-accent)]" />
+              <h3 className="font-display text-lg font-bold text-[var(--color-text)]">
                 Certifications
               </h3>
             </div>
@@ -76,30 +76,24 @@ export default function EducationCerts() {
             {/* Infinite marquee */}
             <div
               data-testid="certifications-marquee"
-              className="relative overflow-hidden glass-card rounded-2xl py-5"
-              style={{
-                maskImage:
-                  "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)",
-                WebkitMaskImage:
-                  "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)",
-              }}
+              className="relative overflow-hidden glass-card rounded-[12px] py-5"
             >
               <div className="flex w-max animate-marquee gap-4 px-4">
                 {marquee.map((c, i) => (
                   <div
                     key={i}
-                    className="min-w-[280px] max-w-[280px] glass-card rounded-xl p-4 border border-white/8 hover:border-neon-cyan/40 transition-colors"
+                    className="min-w-[280px] max-w-[280px] glass-card rounded-[12px] p-4 hover:border-[var(--color-accent)] transition-colors duration-200"
                   >
-                    <div className="flex items-center gap-2 mb-2 text-neon-cyan">
+                    <div className="flex items-center gap-2 mb-2 text-[var(--color-accent)]">
                       <Sparkles className="w-3.5 h-3.5" />
                       <span className="text-[10px] font-mono-tech tracking-widest uppercase">
                         Verified
                       </span>
                     </div>
-                    <h5 className="font-display text-sm font-semibold text-white leading-tight line-clamp-2">
+                    <h5 className="font-display text-sm font-semibold text-[var(--color-text)] leading-tight line-clamp-2">
                       {c.title}
                     </h5>
-                    <p className="mt-1.5 text-xs text-[#94A3B8]">{c.issuer}</p>
+                    <p className="mt-1.5 text-xs text-[var(--color-text-secondary)]">{c.issuer}</p>
                   </div>
                 ))}
               </div>
@@ -114,13 +108,13 @@ export default function EducationCerts() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: i * 0.05 }}
-                  className="text-xs text-white/70 flex items-start gap-2"
+                  className="text-xs text-[var(--color-text-secondary)] flex items-start gap-2"
                   data-testid={`cert-item-${i}`}
                 >
-                  <span className="mt-1.5 w-1 h-1 rounded-full bg-neon-emerald shrink-0" />
+                  <span className="mt-1.5 w-1 h-1 rounded-full bg-[var(--color-accent)] shrink-0" />
                   <span>
-                    <span className="text-white/90">{c.title}</span>
-                    <span className="text-white/40"> · {c.issuer}</span>
+                    <span className="text-[var(--color-text)]">{c.title}</span>
+                    <span className="text-[var(--color-text-secondary)]"> · {c.issuer}</span>
                   </span>
                 </motion.li>
               ))}

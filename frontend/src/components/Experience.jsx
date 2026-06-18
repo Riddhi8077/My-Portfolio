@@ -22,31 +22,31 @@ function TimelineItem({ item, index }) {
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ delay: 0.1 + index * 0.08, duration: 0.5 }}
-        className="absolute left-2 sm:left-4 top-2 w-4 h-4 rounded-full bg-[#0B0F19] border-2 border-neon-cyan flex items-center justify-center animate-pulse-glow"
+        className="absolute left-2 sm:left-4 top-2 w-4 h-4 rounded-full bg-white border-2 border-[var(--color-accent)] flex items-center justify-center shadow-sm"
       >
-        <span className="w-1.5 h-1.5 rounded-full bg-neon-emerald" />
+        <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-2)]" />
       </motion.div>
 
-      <div className="glass-card glass-card-hover rounded-2xl p-6 sm:p-7">
+      <div className="glass-card glass-card-hover rounded-[12px] p-6 sm:p-7">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <Briefcase className="w-4 h-4 text-neon-cyan" />
-          <h3 className="font-display text-lg sm:text-xl font-bold text-white">
+          <Briefcase className="w-4 h-4 text-[var(--color-accent)]" />
+          <h3 className="font-display text-lg sm:text-xl font-bold text-[var(--color-text)]">
             {item.company}
           </h3>
-          <span className="text-[10px] font-mono-tech tracking-widest uppercase text-neon-emerald/90 px-2 py-1 rounded-full border border-neon-emerald/30">
+          <span className="tag text-[10px] font-mono-tech tracking-widest uppercase px-2 py-1">
             {item.period}
           </span>
         </div>
-        <p className="text-sm font-mono-tech tracking-wide text-neon-cyan/90 mb-4">
+        <p className="text-sm font-mono-tech tracking-wide text-[var(--color-accent)] mb-4">
           {item.role}
         </p>
         <ul className="space-y-2.5">
           {item.bullets.map((b, i) => (
             <li
               key={i}
-              className="flex gap-3 text-sm sm:text-base text-[#94A3B8] leading-relaxed"
+              className="flex gap-3 text-sm sm:text-base body-copy"
             >
-              <span className="mt-2 w-1 h-1 rounded-full bg-neon-cyan/70 shrink-0" />
+              <span className="mt-2 w-1 h-1 rounded-full bg-[var(--color-accent)] shrink-0" />
               <span>{b}</span>
             </li>
           ))}
@@ -55,7 +55,7 @@ function TimelineItem({ item, index }) {
           {item.stack.map((s) => (
             <span
               key={s}
-              className="text-[10px] font-mono-tech tracking-widest uppercase px-2.5 py-1 rounded-md bg-white/5 text-white/70 border border-white/5"
+              className="tag text-[10px] font-mono-tech tracking-widest uppercase px-2.5 py-1"
             >
               {s}
             </span>
@@ -78,9 +78,9 @@ export default function Experience() {
     <section
       id="experience"
       data-testid="experience-section"
-      className="relative py-24 sm:py-32 bg-obsidian overflow-hidden"
+      className="relative py-24 sm:py-32 section-shell overflow-hidden"
     >
-      <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
       <div className="relative max-w-5xl mx-auto px-5 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -89,16 +89,16 @@ export default function Experience() {
           transition={{ duration: 0.7 }}
           className="mb-16"
         >
-          <div className="text-xs font-mono-tech tracking-[0.3em] text-neon-cyan/80 uppercase mb-3">
+          <div className="section-eyebrow mb-3">
              01 · Career
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white">
+          <h2 className="font-display text-3xl sm:text-5xl section-title">
             Work{" "}
-            <span className="bg-gradient-to-r from-[#00F0FF] to-[#00FF66] bg-clip-text text-transparent">
+            <span className="highlight-text">
               Experience
             </span>
           </h2>
-          <p className="mt-3 text-[#94A3B8] max-w-xl">
+          <p className="mt-3 body-copy max-w-xl">
             Real production roles where I shipped APIs, built dashboards, and led full-stack
             delivery.
           </p>
@@ -106,11 +106,11 @@ export default function Experience() {
 
         <div ref={containerRef} className="relative">
           {/* base line */}
-          <div className="absolute left-3.5 sm:left-[22px] top-0 bottom-0 w-px bg-white/8" />
+          <div className="absolute left-3.5 sm:left-[22px] top-0 bottom-0 w-px bg-[var(--color-border)]" />
           {/* progress line */}
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-3.5 sm:left-[22px] top-0 w-px bg-gradient-to-b from-[#00F0FF] to-[#00FF66] shadow-[0_0_8px_#00F0FF]"
+            className="absolute left-3.5 sm:left-[22px] top-0 w-px bg-[var(--color-accent)]"
           />
           {EXPERIENCES.map((e, i) => (
             <TimelineItem key={e.id} item={e} index={i} />

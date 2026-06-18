@@ -35,7 +35,7 @@ export default function Contact() {
       data-testid={`contact-input-${name}`}
       value={form[name]}
       onChange={(e) => setForm({ ...form, [name]: e.target.value })}
-      className="w-full bg-transparent border-0 border-b border-white/10 focus:border-neon-cyan focus:outline-none py-3 px-1 text-sm font-mono-tech placeholder:text-white/30 text-white transition-colors"
+      className="w-full bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-accent)] focus:outline-none py-3 px-1 text-sm font-mono-tech placeholder:text-slate-400 text-[var(--color-text)] transition-colors duration-200"
       {...props}
     />
   );
@@ -44,10 +44,9 @@ export default function Contact() {
     <section
       id="contact"
       data-testid="contact-section"
-      className="relative py-24 sm:py-32 bg-obsidian overflow-hidden"
+      className="relative py-24 sm:py-32 section-shell overflow-hidden"
     >
-      <div className="absolute inset-0 grid-bg opacity-25 pointer-events-none" />
-      <div className="absolute -bottom-32 right-0 w-[500px] h-[500px] rounded-full bg-neon-emerald/5 blur-[140px]" />
+      <div className="absolute inset-0 grid-bg opacity-15 pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
         <motion.div
@@ -57,16 +56,16 @@ export default function Contact() {
           transition={{ duration: 0.7 }}
           className="mb-14 text-center"
         >
-          <div className="text-xs font-mono-tech tracking-[0.3em] text-neon-cyan/80 uppercase mb-3">
+          <div className="section-eyebrow mb-3">
              06 · Let&apos;s build
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white">
+          <h2 className="font-display text-3xl sm:text-5xl section-title">
             Get in{" "}
-            <span className="bg-gradient-to-r from-[#00F0FF] to-[#00FF66] bg-clip-text text-transparent">
+            <span className="highlight-text">
               touch
             </span>
           </h2>
-          <p className="mt-3 text-[#94A3B8] max-w-xl mx-auto">
+          <p className="mt-3 body-copy max-w-xl mx-auto">
             Open to internships, full-time SWE roles & freelance builds. Drop a line —
             I reply fast.
           </p>
@@ -81,30 +80,30 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 space-y-4"
           >
-            <div className="glass-card rounded-2xl p-6 space-y-4">
+            <div className="glass-card rounded-[12px] p-6 space-y-4">
               <a
                 href={`tel:${PROFILE.phone.replace(/s/g, "")}`}
                 data-testid="contact-phone-link"
-                className="flex items-center gap-3 text-sm text-white/85 hover:text-neon-cyan transition-colors"
+                className="flex items-center gap-3 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent-hover)] transition-colors duration-200"
               >
-                <span className="w-9 h-9 rounded-lg grid place-items-center bg-neon-cyan/10 border border-neon-cyan/30">
-                  <Phone className="w-4 h-4 text-neon-cyan" />
+                <span className="w-9 h-9 icon-box grid place-items-center">
+                  <Phone className="w-4 h-4" />
                 </span>
                 <span className="font-mono-tech">{PROFILE.phone}</span>
               </a>
-              <div className="flex items-center gap-3 text-sm text-white/85">
-                <span className="w-9 h-9 rounded-lg grid place-items-center bg-neon-emerald/10 border border-neon-emerald/30">
-                  <MapPin className="w-4 h-4 text-neon-emerald" />
+              <div className="flex items-center gap-3 text-sm text-[var(--color-text-secondary)]">
+                <span className="w-9 h-9 icon-box grid place-items-center">
+                  <MapPin className="w-4 h-4" />
                 </span>
                 <span className="font-mono-tech">{PROFILE.location}</span>
               </div>
-              <div className="pt-4 border-t border-white/5 flex items-center gap-2">
+              <div className="pt-4 border-t border-[var(--color-border)] flex items-center gap-2">
                 <a
                   data-testid="contact-github-link"
                   href={PROFILE.socials.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full grid place-items-center border border-white/10 text-white/70 hover:text-neon-cyan hover:border-neon-cyan/40 transition-all hover:scale-110"
+                  className="w-10 h-10 rounded-[12px] grid place-items-center border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-accent-hover)] hover:border-[var(--color-accent)] transition-all duration-200 hover:-translate-y-0.5"
                   aria-label="github"
                 >
 <GitBranch className="w-4 h-4" />
@@ -114,7 +113,7 @@ export default function Contact() {
                   href={PROFILE.socials.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full grid place-items-center border border-white/10 text-white/70 hover:text-neon-cyan hover:border-neon-cyan/40 transition-all hover:scale-110"
+                  className="w-10 h-10 rounded-[12px] grid place-items-center border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-accent-hover)] hover:border-[var(--color-accent)] transition-all duration-200 hover:-translate-y-0.5"
                   aria-label="LinkedIn"
                 >
                   <span className="text-xs font-bold">in</span>
@@ -124,7 +123,7 @@ export default function Contact() {
                   href={PROFILE.socials.leetcode}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full grid place-items-center border border-white/10 text-white/70 hover:text-neon-emerald hover:border-neon-emerald/50 transition-all hover:scale-110"
+                  className="w-10 h-10 rounded-[12px] grid place-items-center border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-accent-hover)] hover:border-[var(--color-accent)] transition-all duration-200 hover:-translate-y-0.5"
                   aria-label="LeetCode"
                 >
                   <Code2 className="w-4 h-4" />
@@ -132,13 +131,13 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="glass-card rounded-2xl p-6">
-              <div className="text-[11px] font-mono-tech tracking-widest uppercase text-neon-cyan/80 mb-2">
+            <div className="glass-card rounded-[12px] p-6">
+              <div className="text-[11px] font-mono-tech tracking-widest uppercase text-[var(--color-accent)] mb-2">
                 $ availability --status
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <span className="w-2 h-2 rounded-full bg-neon-emerald animate-pulse-glow" />
-                <span className="text-white/85">
+                <span className="w-2 h-2 rounded-full bg-[var(--color-success)]" />
+                <span className="text-[var(--color-text-secondary)]">
                   Open to full-time & internship offers
                 </span>
               </div>
@@ -153,7 +152,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 glass-card rounded-2xl p-6 sm:p-8"
+            className="lg:col-span-3 glass-card rounded-[12px] p-6 sm:p-8"
           >
             <div className="grid sm:grid-cols-2 gap-5">
               {field("name", { placeholder: "Your name", required: true, maxLength: 120 })}
@@ -171,18 +170,18 @@ export default function Contact() {
                 required
                 rows={5}
                 maxLength={4000}
-                className="w-full bg-transparent border-0 border-b border-white/10 focus:border-neon-cyan focus:outline-none py-3 px-1 text-sm font-mono-tech placeholder:text-white/30 text-white transition-colors resize-none"
+                className="w-full bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-accent)] focus:outline-none py-3 px-1 text-sm font-mono-tech placeholder:text-slate-400 text-[var(--color-text)] transition-colors duration-200 resize-none"
               />
             </div>
 
             <div className="mt-6 flex flex-wrap items-center gap-4 justify-between">
-              <div className="text-[11px] font-mono-tech text-white/40">
+              <div className="text-[11px] font-mono-tech text-[var(--color-text-secondary)]">
                 Stored securely. No spam, ever.
               </div>
               <button
                 data-testid="contact-submit-btn"
                 disabled={status === "sending"}
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-mono-tech text-xs tracking-widest uppercase text-[#0B0F19] bg-gradient-to-r from-[#00F0FF] to-[#00FF66] hover:scale-[1.04] transition-transform disabled:opacity-60 disabled:scale-100 shadow-[0_0_24px_rgba(0,240,255,0.35)]"
+                className="btn-primary px-7 py-3 font-mono-tech text-xs tracking-widest uppercase disabled:opacity-60 disabled:scale-100"
               >
                 <Send className="w-4 h-4" />
                 {status === "sending" ? "Sending…" : "Send Message"}
@@ -194,7 +193,7 @@ export default function Contact() {
                 data-testid="contact-success"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-5 flex items-center gap-2 text-sm text-neon-emerald"
+                className="mt-5 flex items-center gap-2 text-sm text-[var(--color-success)]"
               >
                 <CheckCircle2 className="w-4 h-4" />
                 Message sent — I&apos;ll get back within 24h.
