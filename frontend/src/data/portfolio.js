@@ -12,7 +12,7 @@ export const PROFILE = {
     leetcode: "https://leetcode.com/u/Riddhi8077/",
   },
   leetcodeUsername: "Riddhi8077",
-  resumePath: "/Riddhi_Pachehara_Resume.pdf",
+  resumePath: "/assets/Riddhi_Pachehara_Resume.pdf",
 };
 
 export const EXPERIENCES = [
