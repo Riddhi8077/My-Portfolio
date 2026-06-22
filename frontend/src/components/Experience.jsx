@@ -90,7 +90,6 @@ export default function Experience() {
           className="mb-16"
         >
           <div className="section-eyebrow mb-3">
-             01 · Career
           </div>
           <h2 className="font-display text-3xl sm:text-5xl section-title">
             Work{" "}
