@@ -237,7 +237,6 @@ export default function LeetCodeWidget() {
         >
           <div>
             <div className="section-eyebrow mb-3">
-             04 · DSA Grind
             </div>
             <h2 className="font-display text-3xl sm:text-5xl section-title">
               LeetCode{" "}
