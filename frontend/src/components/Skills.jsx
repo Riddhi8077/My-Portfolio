@@ -22,7 +22,6 @@ export default function Skills() {
           className="mb-14"
         >
           <div className="section-eyebrow mb-3">
-             03 · Stack
           </div>
           <h2 className="font-display text-3xl sm:text-5xl section-title">
             Technical{" "}
