@@ -217,7 +217,6 @@ export default function Projects() {
           className="mb-14"
         >
           <div className="section-eyebrow mb-3">
-             02 · Selected Projects
           </div>
           <h2 className="font-display text-3xl sm:text-5xl section-title">
             Things I&apos;ve{" "}
