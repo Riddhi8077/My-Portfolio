@@ -66,7 +66,7 @@ export default function Contact() {
             </span>
           </h2>
           <p className="mt-3 body-copy max-w-xl mx-auto">
-            Open to internships, full-time SWE roles & freelance builds. Drop a line —
+            Open to internships, full-time SWE roles & freelance builds. Drop a line -
             I reply fast.
           </p>
         </motion.div>
@@ -133,7 +133,7 @@ export default function Contact() {
 
             <div className="glass-card rounded-[12px] p-6">
               <div className="text-[11px] font-mono-tech tracking-widest uppercase text-[var(--color-accent)] mb-2">
-                $ availability --status
+                 availability --status
               </div>
               <div className="flex items-center gap-2 text-sm">
                 <span className="w-2 h-2 rounded-full bg-[var(--color-success)]" />
@@ -196,7 +196,7 @@ export default function Contact() {
                 className="mt-5 flex items-center gap-2 text-sm text-[var(--color-success)]"
               >
                 <CheckCircle2 className="w-4 h-4" />
-                Message sent — I&apos;ll get back within 24h.
+                Message sent - I&apos;ll get back within 24h.
               </motion.div>
             )}
             {status === "err" && (
