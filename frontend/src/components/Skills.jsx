@@ -60,7 +60,7 @@ export default function Skills() {
                   {cat.items.map((it) => (
                     <span
                       key={it}
-                      className="tag text-xs font-mono-tech tracking-wider px-3 py-1.5 hover:bg-[#DBEAFE] hover:border-[#93C5FD] transition-all duration-200"
+                      className="tag text-xs font-mono-tech tracking-wider px-3 py-1.5 hover:bg-[#b294b8] hover:border-[#93C5FD] transition-all duration-200"
                     >
                       {it}
                     </span>
