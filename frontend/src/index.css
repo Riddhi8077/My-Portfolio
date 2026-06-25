@@ -3,18 +3,18 @@
 :root {
     --color-bg: #FAFAF9;
     --color-surface: #FFFFFF;
-    --color-accent: #2563EB;
-    --color-accent-2: #0EA5E9;
-    --color-accent-hover: #1D4ED8;
-    --color-text: #0F172A;
-    --color-text-secondary: #475569;
-    --color-border: #E2E8F0;
-    --color-muted: #F1F5F9;
+    --color-accent: #390449;
+    --color-accent-2: #500168;
+    --color-accent-hover: #390050;
+    --color-text: #250f2a;
+    --color-text-secondary: #634769;
+    --color-border: #ece2f0;
+    --color-muted: #f6f1f9;
     --color-success: #059669;
     --color-danger: #DC2626;
     --radius-lg: 12px;
-    --shadow-soft: 0 14px 32px rgba(15, 23, 42, 0.08);
-    --shadow-subtle: 0 8px 20px rgba(15, 23, 42, 0.06);
+    --shadow-soft: 0 14px 32px rgba(47, 20, 54, 0.08);
+    --shadow-subtle: 0 8px 20px rgba(64, 29, 78, 0.06);
 }
 
 html {
@@ -32,7 +32,7 @@ body {
 }
 
 ::selection {
-    background: rgba(37, 99, 235, 0.18);
+    background: rgba(156, 37, 235, 0.18);
     color: var(--color-text);
 }
 
@@ -44,12 +44,12 @@ body {
     background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-    background: #CBD5E1;
+    background: #d9cbe1;
     border-radius: 999px;
     border: 2px solid var(--color-bg);
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #94A3B8;
+    background: #b294b8;
 }
 
 @layer base {
@@ -102,7 +102,7 @@ body {
         transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease, background-color 240ms ease;
     }
     .glass-card-hover:hover {
-        border-color: rgba(37, 99, 235, 0.32);
+        border-color: rgba(156, 37, 235, 0.32);
         transform: translateY(-2px);
         box-shadow: var(--shadow-soft);
     }
@@ -147,13 +147,13 @@ body {
         border: 1px solid var(--color-accent);
         font-weight: 700;
         transition: background-color 220ms ease, border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
-        box-shadow: 0 10px 20px rgba(37, 99, 235, 0.16);
+        box-shadow: 0 10px 20px rgba(110, 19, 138, 0.16);
     }
     .btn-primary:hover {
         background: var(--color-accent-hover);
         border-color: var(--color-accent-hover);
         transform: translateY(-1px);
-        box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+        box-shadow: 0 12px 24px rgba(172, 37, 235, 0.2);
     }
     .btn-secondary {
         display: inline-flex;
@@ -163,28 +163,28 @@ body {
         border-radius: var(--radius-lg);
         background: #FFFFFF;
         color: var(--color-accent);
-        border: 1px solid rgba(37, 99, 235, 0.34);
+        border: 1px solid rgba(172, 37, 235, 0.2);
         font-weight: 700;
         transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease, transform 220ms ease;
     }
     .btn-secondary:hover {
-        background: #EFF6FF;
+        background: #f8efff;
         color: var(--color-accent-hover);
         border-color: var(--color-accent-hover);
         transform: translateY(-1px);
     }
     .tag {
         border-radius: 8px;
-        background: #EFF6FF;
+        background: #faefff;
         color: var(--color-accent);
-        border: 1px solid #BFDBFE;
+        border: 1px solid #e5bffe;
         font-weight: 700;
     }
     .icon-box {
         border-radius: var(--radius-lg);
-        background: #EFF6FF;
+        background: #f6efff;
         color: var(--color-accent);
-        border: 1px solid #BFDBFE;
+        border: 1px solid #e0bffe;
     }
     .project-grid {
         display: grid;
@@ -230,7 +230,7 @@ body {
 .animate-marquee { animation: marquee 30s linear infinite; }
 .cursor-blink { animation: blink 1s steps(1) infinite; }
 .shimmer {
-    background: #EFF6FF;
+    background: #f8efff;
     background-size: 1000px 100%;
     animation: shimmer 2.4s linear infinite;
 }
