@@ -73,7 +73,6 @@ export default function Preloader({ onDone }) {
 
           <div className="relative z-[3] w-full max-w-2xl px-6 text-center">
             <div className="font-mono-tech text-[10px] sm:text-xs tracking-[0.24em] text-[var(--color-accent)] mb-6">
-              [ INITIALIZING_PORTFOLIO.SYS ]
             </div>
 
             <div
