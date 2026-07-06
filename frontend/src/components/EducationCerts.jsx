@@ -22,7 +22,6 @@ export default function EducationCerts() {
           className="mb-14"
         >
           <div className="section-eyebrow mb-3">
-             05 · Foundations
           </div>
           <h2 className="font-display text-3xl sm:text-5xl section-title">
             Education &{" "}
