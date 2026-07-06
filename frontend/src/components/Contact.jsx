@@ -57,7 +57,6 @@ export default function Contact() {
           className="mb-14 text-center"
         >
           <div className="section-eyebrow mb-3">
-             06 · Let&apos;s build
           </div>
           <h2 className="font-display text-3xl sm:text-5xl section-title">
             Get in{" "}
@@ -66,8 +65,7 @@ export default function Contact() {
             </span>
           </h2>
           <p className="mt-3 body-copy max-w-xl mx-auto">
-            Open to internships, full-time SWE roles & freelance builds. Drop a line -
-            I reply fast.
+            Open to internships, full-time SWE roles & freelance builds. Drop a line.
           </p>
         </motion.div>
 
