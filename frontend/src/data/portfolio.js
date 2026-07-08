@@ -18,6 +18,17 @@ export const PROFILE = {
 export const EXPERIENCES = [
   {
     id: "exp-1",
+    company: "Songdew",
+    role: "Software Engineer Intern",
+    period: "Internship",
+    bullets: [
+      "Developed and enhanced scalable Angular-based web applications by implementing dynamic UI components, API integrations, routing, and responsive user interfaces for high-traffic user workflows.",
+      "Collaborated with cross-functional teams to analyze requirements, optimize frontend architecture, debug production issues, and deliver maintainable, reusable, and performance-focused features.",
+    ],
+    stack: ["Python", "Django", "Angular 16", "Api testing"],
+  },
+  {
+    id: "exp-2",
     company: "Market Creators",
     role: "Web Development Intern",
     period: "Internship",
@@ -27,18 +38,7 @@ export const EXPERIENCES = [
     ],
     stack: ["Node.js", "REST APIs", "Responsive UI"],
   },
-  {
-    id: "exp-2",
-    company: "NullClass",
-    role: "Web Development Intern",
-    period: "Internship",
-    bullets: [
-      "Built a full-stack ticket booking system using Node.js and SQL, implementing booking, cancellation, and refund workflows.",
-      "Developed modular front-end components for scalable and maintainable UI architecture.",
-    ],
-    stack: ["Node.js", "SQL", "React"],
-  },
-  {
+ {
     id: "exp-3",
     company: "Lensshine",
     role: "Technical Lead • E-commerce Platform",
@@ -48,6 +48,17 @@ export const EXPERIENCES = [
       "Implemented billing, dashboard analytics, customer history, and invoice generation with Netlify + Render deployment.",
     ],
     stack: ["React", "Node.js", "Express", "MongoDB", "Stripe", "JWT"],
+  },
+  {
+    id: "exp-4",
+    company: "NullClass",
+    role: "Web Development Intern",
+    period: "Internship",
+    bullets: [
+      "Built a full-stack ticket booking system using Node.js and SQL, implementing booking, cancellation, and refund workflows.",
+      "Developed modular front-end components for scalable and maintainable UI architecture.",
+    ],
+    stack: ["Node.js", "SQL", "React"],
   },
 ];
 
