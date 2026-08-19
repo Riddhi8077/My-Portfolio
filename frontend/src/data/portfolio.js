@@ -68,6 +68,16 @@ export const PROJECT_CATEGORIES = [
     title: "Hackathon Projects",
     subtitle: "Award-winning innovation builds",
     projects: [
+       {
+        id: "DocMate",
+        title: "DocMate",
+        award: "GirlsHackDays,Paytm top 4 Finalist",
+        description:
+          "Specialists, hospitals, Report Analyser and trusted resources - all in one place",
+        stack: ["Express", "Node.js", "Tailwind css", "Base44 AI", "Doctor Verification Engine", "MongoDB", "Gemini 2.5 Flash"],
+        mockup: "/assets/projects/DocMate.png",
+        link: "https://doc-mate-ac4680a6.base44.app/Home",
+      },
       {
         id: "medoveda",
         title: "MedoVeda",
